@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <h1>展示数据库的内容</h1>
+    <table>
+        <thread>
+            <tr>
+                <th>城市</th>
+                <th>城市编号</th>
+            </tr>
+        </thread>
+
+        <tbody>
+            {% for row in city_code_list %}
+                <tr>
+                    <td>{{ row.city }}</td>
+                    <td>{{ row.code }}</td>
+    <!-- {#                <td>{{ row.code }}</td>#} -->
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
