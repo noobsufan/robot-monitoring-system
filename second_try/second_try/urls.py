@@ -138,5 +138,5 @@ urlpatterns = [
     path('manager/',manager),           #  管理员后台页面
     path('dt/',data_test),                      #  指令上传指定url
     path('show_info/',show_info),     #  历史指令记录展示页面
-    path('edit/(\w+).html',edit)           # 动态路由的设置，正则
+    path('edit/(\w+).html',edit)           # 动态路由的设置，正则表达式
 ]
