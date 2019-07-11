@@ -19,7 +19,7 @@ from django.shortcuts import HttpResponse,render,redirect
 from database_urls import db, db_call
 from django.http import JsonResponse
 import time
-from django.conf.urls import include
+from django.conf.urls import  include
 from app01 import views
 
 #   用于计算cookie超时时间
@@ -145,6 +145,8 @@ urlpatterns = [
     # path('app01/',include('app01.urls')),
     path('index/',views.index),
     # re_path('edit/(?P<a1>\w+)/(?P<a2>\w+)/',views.edit)  # 取别名，多参数，顺序对应
-    re_path('edit/(\w+).html$',views.edit),           # 动态路由的设置，正则表达式
+    re_path('edit/(\w+)/$',views.edit),           # 动态路由的设置，正则表达式
+    path('app01/',include('app01.urls')),      #路由分发,注意前面已经有：from django.conf.urls import  include
     # path('edit/alex/',views.edit),
+    path('index_name/',views.index_name,name='name_index'),
 ]
