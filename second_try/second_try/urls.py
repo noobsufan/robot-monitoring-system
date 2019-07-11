@@ -14,11 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,re_path
 from django.shortcuts import HttpResponse,render,redirect    
 from database_urls import db, db_call
 from django.http import JsonResponse
 import time
+from django.conf.urls import include
+from app01 import views
+
 #   用于计算cookie超时时间
 import datetime
 from datetime import timedelta
@@ -138,5 +141,10 @@ urlpatterns = [
     path('manager/',manager),           #  管理员后台页面
     path('dt/',data_test),                      #  指令上传指定url
     path('show_info/',show_info),     #  历史指令记录展示页面
-    path('edit/(\w+).html',edit)           # 动态路由的设置，正则表达式
+
+    # path('app01/',include('app01.urls')),
+    path('index/',views.index),
+    # re_path('edit/(?P<a1>\w+)/(?P<a2>\w+)/',views.edit)  # 取别名，多参数，顺序对应
+    re_path('edit/(\w+).html$',views.edit),           # 动态路由的设置，正则表达式
+    # path('edit/alex/',views.edit),
 ]
