@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>welcome!</title>
+</head>
+<body>
+	<h1>用户列表</h1>
+	<u1>
+		{% for row in posts %}
+			<li>{{row.username}}</li>
+		{%endfor%}
+	</u1>
+    <div>
+         {% if posts.has_previous %}
+            <a href="/app01/index/?page={{  posts.previous_page_number }}">上一页</a>
+        {% endif %}
+    </div>
+    <div>
+         {% if posts.has_next %}
+            <a href="/app01/index/?page={{  posts.next_page_number }}">下一页</a>
+        {% endif %}
+    </div>
+</body>
+</html>

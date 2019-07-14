@@ -72,7 +72,7 @@ def login(request):
         # else:
         #     return render(request, 'login.html', {'msg': '用户名或密码错误!'})
 
-        user = db_call.get_list('select name from user where ID=%s and pwd=%s ',[u,p,])
+        user = db_call.get_list('select ID, admin from user where ID=%s and pwd=%s ',[u,p,])
 
         if user:
             print(user)
