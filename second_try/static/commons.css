@@ -1,3 +1,101 @@
 h1{
     color: red;
 }
+.text {
+    /*用于盒模型调整内容间距*/
+    padding: 15px;
+    /*用于调整缩进*/
+    text-indent: 0px;
+    /*用于调整文字行之间行距*/
+    line-height: 20px;
+}
+.btn-default1 {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+    z-index: 10;
+}
+.btn-default1:focus,
+.btn-default.focus {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #8c8c8c;
+}
+.btn-default1:hover {
+  color: white;
+  background-color: red;
+  border-color: #adadad;
+}
+.cont {
+    width: 1920px;
+    height: 1280px;
+    background: url("56.jpg");
+    //margin: 350px 350px ;
+    background-position: 30%;
+
+}
+nav{
+		width: 100%;
+		height: 60px;
+		background: rgba(0,0,0,.3);
+		position: absolute;
+		z-index: 10;
+	}
+	nav ul{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	nav ul li{
+		text-align: center;
+		float: left;
+		line-height: 60px;
+	}
+	nav ul li a{
+		width: 100px;
+		color: #fff;
+		font-size: 20px;
+		font-weight: 600;
+		display: block;
+	}
+    nav ul div{
+        float: right;
+		display: block;
+	}
+	nav ul li a:hover,nav ul li a:visited{
+		text-decoration: none;
+		background: rgba(0,0,0,.5);
+		color: #fff;
+	}
+	.words{font-size: 100px;
+			letter-spacing: 10px;/*间距*/
+			position: absolute;
+			top:10%;
+			left:10%;
+            color: red;
+    }
+.login-interface{
+			position:relative;
+			top:100px;
+			left:10%;
+    }
+
+	.imgw{position: relative;}
+h1.pos_abs
+    {
+    position:fixed;
+    left:50px;
+    top:50px;
+    }
+ .imgw .home-bottom{
+            position: absolute;
+            width:80px;
+            top: 55%;
+            right:50%;
+            z-index: 21}
+ .login {
+
+	 padding-top:150px;
+
+ }
+.login-img{position: relative;}

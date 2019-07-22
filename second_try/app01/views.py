@@ -109,3 +109,68 @@ def test(request):
 
     # return  render(request,'test.html')
     return HttpResponse('...')
+def layout(request):
+    return render(request,"layout.html")
+#////////*********************************************************************************************************/
+from django.shortcuts import render,redirect
+import pymysql
+def members(request):
+
+    conn = pymysql.connect(host='127.0.0.1',port=3306,user='root',passwd='3576842',db='208_robot')
+    cursor = conn.cursor(cursor = pymysql.cursors.DictCursor)
+    cursor.execute("select id,name from app01_boy")
+    members_list = cursor.fetchall()
+    cursor.close()
+    conn.close()
+
+    return render(request, 'members.html', {'members_list': members_list})
+
+def add_members(request):
+    if request.method =="GET":
+        return render(request, 'add_members.html')
+    else:
+        print(request.POST)
+        v = request.POST.get('name')
+        conn = pymysql.connect(host='127.0.0.1', port=3306, user='root', passwd='3576842', db='208_robot')
+        cursor = conn.cursor(cursor=pymysql.cursors.DictCursor)
+        cursor.execute("insert into app01_boy(name) value(%s)",[v,])
+        conn.commit()
+        cursor.close()
+        conn.close()
+        return redirect('/members/')
+def del_members(request):
+    nid = request.GET.get('nid')
+    conn = pymysql.connect(host='127.0.0.1', port=3306, user='root', passwd='3576842', db='208_robot')
+    cursor = conn.cursor(cursor=pymysql.cursors.DictCursor)
+    cursor.execute("delete from app01_boy where id = %s", [nid,])
+    conn.commit()
+    cursor.close()
+    conn.close()
+    return redirect('/members/')
+
+def edit_members(request):
+    if request.method == "GET":
+        nid = request.GET.get('nid')
+        conn = pymysql.connect(host='127.0.0.1', port=3306, user='root', passwd='3576842', db='208_robot')
+        cursor = conn.cursor(cursor=pymysql.cursors.DictCursor)
+        cursor.execute("select id, name from app01_boy where id = %s", [nid,])
+        result = cursor.fetchone()
+        cursor.close()
+        conn.close()
+        print(request)
+        return render(request, 'edit_members.html', {'result': result})
+    else:
+        nid = request.GET.get('nid')
+        name = request.POST.get('name')
+
+        conn = pymysql.connect(host='127.0.0.1', port=3306, user='root', passwd='3576842', db='208_robot')
+        cursor = conn.cursor(cursor=pymysql.cursors.DictCursor)
+        cursor.execute("update app01_boy set name = %s where id = %s",[name,nid,])
+        conn.commit()
+        cursor.close()
+        conn.close()
+
+        return redirect('/members/')
+
+def layout(request):
+    return render(request,'layout.html')

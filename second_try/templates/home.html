@@ -5,16 +5,32 @@
     <title>仲恺农业机器人</title>
     <link rel="stylesheet" href="/static/plugins/bootstrap-3.3.7-dist/css/bootstrap.css"/>
     <link rel="stylesheet" href="/static/plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/static/commons.css"/>
 </head>
 <body>
-    <h1>This is the Home Page!</h1>
-    <h1>这里是展示首页！</h1>
+<nav>
+		<ul>
+			<li class="active"><a href="#">首页</a></li>
+			<li><a href="#">服务</a></li>
+			<li><a href="#">支持</a></li>
+			<li><a href="#">下载</a></li>
+            <div >
+                <button type="button" class="btn btn-default1 navbar-btn">Undefined</button>
+                <button type="button" class="btn btn-default1 navbar-btn">Undefined</button>
+                <button type="button" class="btn btn-default navbar-btn">Undefined</button>
+                <button type="button" class="btn btn-default navbar-btn">Undefined</button>
+            </div>
+		</ul>
+</nav>
+	<div class="imgw">
+		<img src="/static/home.jpg" class="img-responsive" alt="Responsive image">
 
-{#    <button type="button" class="btn btn-primary">登录</button>#}
-{#    <button type="button" class="btn btn-primary btn-lg active">登录</button>#}
-{#    <input type="button" class="btn btn-primary btn-lg active" value="登录" />#}
-    <input type="button" class="btn btn-primary btn-lg active" onclick="window.open('/login/','_self');" value="登录" />
 
+        <div class="home-bottom">
+            <input type="button" class="btn btn-primary btn-lg active" onclick="window.open('/login/','_self');" value="登录" />
+        </div>
+
+	</div>
 
 
 </body>

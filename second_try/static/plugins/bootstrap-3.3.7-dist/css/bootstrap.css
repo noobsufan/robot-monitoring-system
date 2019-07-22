@@ -2982,7 +2982,7 @@ select[multiple].input-lg {
   .form-horizontal .control-label {
     padding-top: 7px;
     margin-bottom: 0;
-    text-align: right;
+    text-align: center;
   }
 }
 .form-horizontal .has-feedback .form-control-feedback {
@@ -3030,7 +3030,7 @@ select[multiple].input-lg {
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-.btn:hover,
+.btn:hover
 .btn:focus,
 .btn.focus {
   color: #333;
@@ -3816,6 +3816,8 @@ tbody.collapse.in {
 .input-group {
   position: relative;
   display: table;
+  width:300px;
+
   border-collapse: separate;
 }
 .input-group[class*="col-"] {
@@ -4275,6 +4277,13 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   float: left;
   height: 50px;
   padding: 15px 15px;
+  font-size: 18px;
+  line-height: 20px;
+}
+.navbar-brand-r{
+  float: right;
+  height: 10px;
+  padding: 10px 15px;
   font-size: 18px;
   line-height: 20px;
 }

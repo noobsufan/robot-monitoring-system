@@ -77,7 +77,7 @@ def login(request):
         if user:
             print(user)
             # return redirect('/manager/')
-            obj = redirect('/manager/')
+            obj = redirect('/layout/')
             # obj.set_cookie('ticket','sufansufan',max_age=10)            #   max_age = 10 超时时间10秒
             # ct = datetime.datetime.utcnow()                                             #   取得当前时间
             # v = timedelta(seconds =10)                                                      #   间隔
@@ -141,7 +141,7 @@ urlpatterns = [
     path('manager/',manager),           #  管理员后台页面
     path('dt/',data_test),                      #  指令上传指定url
     path('show_info/',show_info),     #  历史指令记录展示页面
-
+    path('layout/',views.layout),
     # path('app01/',include('app01.urls')),
     path('index/',views.index),
     # re_path('edit/(?P<a1>\w+)/(?P<a2>\w+)/',views.edit)  # 取别名，多参数，顺序对应
@@ -149,4 +149,9 @@ urlpatterns = [
     path('app01/',include('app01.urls')),      #路由分发,注意前面已经有：from django.conf.urls import  include
     # path('edit/alex/',views.edit),
     path('index_name/',views.index_name,name='name_index'),
+
+    path('members/', views.members),
+    path('add_members/', views.add_members),
+    path('del_members/', views.del_members),
+    path('edit_members/', views.edit_members),
 ]

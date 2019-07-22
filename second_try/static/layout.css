@@ -1,0 +1,79 @@
+        body{
+            margin: 0;
+        }
+        .pg-heaher{
+            height: 48px;
+            min-width: 1190px;
+            background-color: #2aabd2;
+            line-height:48px;
+        }
+        .pg-heaher .logo{
+            color:white;
+            font-size:18px;
+            width: 200px;
+            text-align: center;
+            border-right:1px solid red;
+        }
+        .pg-heaher .rmenus a{
+            display: inline-block;
+            padding: 0 15px;
+            color: white;
+        }
+        .pg-heaher .rmenus a:hover{
+            background-color:#269abc;
+        }
+        .menus{
+            width:200px;
+            position:absolute;
+            left:0;
+            bottom:0;
+            top:48px;
+            border-right:1px solid #dddddd;
+        }
+        .content{
+            position:absolute;
+            left:200px;
+            right:0;
+            bottom:0;
+            top:48px;
+            min-width: 990px;
+            overflow: scroll;
+            z-index: 20;
+        }
+        .left{
+            float: left;
+        }
+        .right{
+            float: right;
+        }
+        .hide{
+            display: none;
+        }
+        .pg-heaher .avatar{
+            padding: 0 20px;
+        }
+        .pg-heaher .avatar img{
+            border-radius: 50%;
+        }
+        .pg-heaher .avatar .user-info{
+            display: none;
+            position: absolute;
+            width:80px;
+            top: 48px;
+            right:20px;
+            background-color: white;
+            z-index: 21
+        }
+        .pg-heaher .avatar:hover .user-info{
+            display:block;
+        }
+        .pg-heaher .avatar:hover .user-info a{
+            display:block;
+            padding: 1px;
+        }
+        .pg-body .menus a{
+            display:block;
+            padding:10px 5px;
+            border-bottom:1px solid #dddddd;
+
+        }

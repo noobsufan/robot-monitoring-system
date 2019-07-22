@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理</title>
+    <link rel="stylesheet" href="/static/plugins/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/plugins/font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="/static/layout.css">
+
+</head>
+<body>
+    <div class="pg-heaher">
+        <div class="logo left">项目管理</div>
+        <div class="avatar right" style="position:relative">
+            <img style="width: 40px;height: 40px;" src="/static/F2.png">
+            <div class="user-info" >
+                <a>个人资料</a>
+                <a>注销</a>
+            </div>
+        </div>
+        <div class="rmenus right">
+            <a><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i> 消息</a>
+            <a><i class="glyphicon glyphicon-cog fa-spin" aria-hidden="true"></i> 设置</a>
+
+        </div>
+
+    </div>
+    <div class="pg-body">
+        <div class="menus">
+            <a href="/db_view/">
+               <button class="btn btn-primary btn-lg active">进入数据库</button>
+            </a>
+            <a href="/show_info/">
+                <button class="btn btn-primary btn-lg active">指令历史查询</button>
+            </a>
+            <a href="/app01/show_usr_info/">
+                 <button class="btn btn-primary btn-lg active">用户列表查询(ORM)</button>
+            </a>
+            <a href="/login/">
+                <button class="btn btn-primary btn-lg active">返回</button>
+            </a>
+        </div>
+        <div class="content">
+            <ol class="breadcrumb">
+              <li><a href="#">首页</a></li>
+              <li><a href="#">人员管理</a></li>
+              <li ><a href="/add_members/">添加成员</a></li>
+            </ol>
+
+            <div>
+
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>班级名称</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in members_list %}
+                <tr>
+                    <td>{{ row.id }}</td>
+                    <td>{{ row.name }}</td>
+                    <td><a href="/edit_members/?nid={{ row.id }}">编辑</a></td>
+                    <td><a href="/del_members/?nid={{ row.id }}">删除</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+        </div>
+    </div>
+
+</body>
+</html>

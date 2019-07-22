@@ -87,7 +87,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': '208_robot',
         'USER':'root',
-        'PASSWORD':'712688',
+        'PASSWORD':'3576842',
         'HOST':'localhost',
         'PORT':3306,
     }
@@ -133,4 +133,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR,'static'),
+    os.path.join(BASE_DIR,'img'),
 )

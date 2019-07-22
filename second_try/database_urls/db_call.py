@@ -4,7 +4,7 @@ import pymysql
 
 def get_list(sql,args):
     conn = pymysql.connect(host='localhost', user='root',
-                           password='712688', database='208_robot', port=3306, charset='utf8')
+                           password='3576842', database='208_robot', port=3306, charset='utf8')
     cursor = conn.cursor(cursor=pymysql.cursors.DictCursor)
     cursor.execute(sql,args)
     result = cursor.fetchall()
@@ -14,7 +14,7 @@ def get_list(sql,args):
 
 def get_one(sql,args):
     conn = pymysql.connect(host='localhost', user='root',
-                           password='712688', database='208_robot', port=3306, charset='utf8')
+                           password='3576842', database='208_robot', port=3306, charset='utf8')
     cursor = conn.cursor(cursor=pymysql.cursors.DictCursor)
     cursor.execute(sql,args)
     result = cursor.fetchone()
@@ -24,7 +24,7 @@ def get_one(sql,args):
 
 def modify(sql,args):
     conn = pymysql.connect(host='localhost', user='root',
-                           password='712688', database='208_robot', port=3306, charset='utf8')
+                           password='35768423', database='208_robot', port=3306, charset='utf8')
     cursor = conn.cursor(cursor=pymysql.cursors.DictCursor)
     cursor.execute(sql,args)
     conn.commit()

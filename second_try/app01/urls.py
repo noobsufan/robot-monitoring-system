@@ -12,4 +12,5 @@ urlpatterns = [
     path('index/',orm.index),
     path('custom/',orm.custom),
     path('test/',views.test),
+
 ]

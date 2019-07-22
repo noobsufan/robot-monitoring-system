@@ -6,7 +6,7 @@ from django.db import connection
 # 城市代码数据库展示页面
 def db_view(request):
     conn = pymysql.connect(host='localhost', user='root',
-                           password='712688', database='test_demo', port=3306, charset='utf8')
+                           password='3576842', database='test_demo', port=3306, charset='utf8')
     cursor = conn.cursor(cursor=pymysql.cursors.DictCursor)
     cursor.execute('select * from city_code')
     code_list = cursor.fetchall()
